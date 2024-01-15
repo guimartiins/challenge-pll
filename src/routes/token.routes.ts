@@ -1,14 +1,17 @@
 import { Router, type Request, type Response } from 'express'
-import JWTTokenService from '../services/jwt-token.service'
+import JWTTokenService from '../domain/services/jwt-token.service'
+import Token from '../domain/entity/token'
 
 const router = Router()
 
 router.post('/token/validate', (req: Request, res: Response) => {
-  const token = req.headers.authorization
+  const valueToken = req.headers.authorization
   // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-  if (!token) {
+  if (!valueToken) {
     return res.status(401).send()
   }
+
+  const token = new Token(valueToken)
   const isValid = JWTTokenService.isValid(token)
   res.status(isValid ? 200 : 401).send({ isValid })
 })
