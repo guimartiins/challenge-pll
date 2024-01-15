@@ -1,7 +1,13 @@
-const hello = 'Hello World!'
+import express from 'express'
+import router from './routes/token.routes'
 
-function printer(message: string): string {
-  return message
-}
+const app = express()
+const port = 3000
 
-printer(hello)
+app.use(router)
+
+app.listen(port, () => {
+  console.log(`app listening at http://localhost:${port}`)
+})
+
+export default app
