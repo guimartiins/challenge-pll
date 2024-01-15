@@ -6,6 +6,11 @@ describe('jwt token service unit tests', () => {
     expect(isValid).toBe(false)
   })
 
+  it('should return false if empty string is provided', async () => {
+    const isValid = JWTTokenService.isValid('')
+    expect(isValid).toBe(false)
+  })
+
   it('should return true if valid token is provided', async () => {
     const payload = {
       id: '123',
