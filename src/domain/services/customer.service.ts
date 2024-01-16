@@ -14,7 +14,12 @@ export default class CustomerService {
     customerOne.subtractBalance(value)
     customerTwo.addBalance(value)
 
-    const transaction = new Transaction(customerOne, customerTwo, value)
+    const transaction = new Transaction(
+      '123',
+      customerOne.id,
+      customerTwo.id,
+      value,
+    )
     this.enqueueTransaction(transaction)
   }
 

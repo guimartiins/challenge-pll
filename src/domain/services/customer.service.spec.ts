@@ -31,7 +31,12 @@ describe('Customer Service unit tests', () => {
 
     CustomerService.transfer(customerOne, customerTwo, 50)
 
-    const transaction = new Transaction(customerOne, customerTwo, 50)
+    const transaction = new Transaction(
+      '123',
+      customerOne.id,
+      customerTwo.id,
+      50,
+    )
     expect(customerServiceSpy).toHaveBeenCalledWith(transaction)
   })
 })

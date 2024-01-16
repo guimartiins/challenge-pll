@@ -9,6 +9,7 @@ const config: Config = {
   transform: {
     '^.+\\.(t|j)sx?$': '@swc/jest',
   },
+  clearMocks: true,
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 

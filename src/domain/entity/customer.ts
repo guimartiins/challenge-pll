@@ -19,8 +19,24 @@ export default class Customer {
     this._numberAccount = numberAccount
   }
 
+  get id(): string {
+    return this._id
+  }
+
   get balance(): number {
     return this._balance
+  }
+
+  get name(): string {
+    return this._name
+  }
+
+  get cpf(): string {
+    return this._cpf
+  }
+
+  get numberAccount(): number {
+    return this._numberAccount
   }
 
   subtractBalance(value: number): void {
