@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import request from 'supertest'
 import JWT from 'jsonwebtoken'
-import app from '..'
+import { app } from '..'
 
 describe('token routes integration tests', () => {
   it('should return 200 if valid token is provided', async () => {
@@ -9,7 +10,6 @@ describe('token routes integration tests', () => {
       name: 'John Doe',
     }
     const spy = jest.spyOn(JWT, 'verify')
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     spy.mockReturnValueOnce(payload as any)
 
     const response = await request(app)

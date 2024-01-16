@@ -1,13 +1,28 @@
 import express from 'express'
-import router from './routes/token.routes'
+import tokenRouter from './routes/token.routes'
+import transactionRouter from './routes/transaction.routes'
+import { DBConnectionFactory } from './infraestructure/factories'
 
-const app = express()
-const port = 3000
+function bootstrapServer(): { app: any; connection: any } {
+  const connection = DBConnectionFactory()
 
-app.use(router)
+  const app = express()
+  app.use(express.json())
+  const port = 3000
 
-app.listen(port, () => {
-  console.log(`app listening at http://localhost:${port}`)
-})
+  app.use(tokenRouter)
+  app.use(transactionRouter)
 
-export default app
+  app.listen(port, () => {
+    console.log(`app listening at http://localhost:${port}`)
+  })
+
+  return {
+    app,
+    connection,
+  }
+}
+
+const { app, connection } = bootstrapServer()
+
+export { app, connection }
