@@ -12,7 +12,11 @@ import CustomerModel from '../../../customer/repository/sequelize/customer.model
 export default class TransactionModel extends Model {
   @PrimaryKey
   @Column
+<<<<<<< HEAD
   declare id: number
+=======
+  declare id: string
+>>>>>>> 961df353f36b7c494886dab6503bde4d9a4b0263
 
   @Column
   declare value: number

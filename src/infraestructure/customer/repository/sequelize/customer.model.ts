@@ -16,5 +16,9 @@ export default class CustomerModel extends Model {
   declare balance: number
 
   @Column({ allowNull: false })
+<<<<<<< HEAD
   declare numberAccount: string
+=======
+  declare numberAccount: number
+>>>>>>> 961df353f36b7c494886dab6503bde4d9a4b0263
 }

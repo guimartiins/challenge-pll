@@ -35,7 +35,11 @@ export default class Customer {
     return this._cpf
   }
 
+<<<<<<< HEAD
   get numberAccount(): string {
+=======
+  get numberAccount(): number {
+>>>>>>> 961df353f36b7c494886dab6503bde4d9a4b0263
     return this._numberAccount
   }
 
