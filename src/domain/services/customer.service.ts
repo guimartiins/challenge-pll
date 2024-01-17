@@ -1,3 +1,4 @@
+import { Transaction } from 'sequelize'
 import type Customer from '../entity/customer'
 
 export default class CustomerService {

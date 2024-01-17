@@ -1,4 +1,4 @@
-import type Customer from './customer'
+import Customer from './customer'
 
 export default class Transaction {
   private readonly _id: number
