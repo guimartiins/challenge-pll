@@ -9,7 +9,8 @@
     "test:ci": "npm run test -- --forceExit",
     "lint": "eslint src/**/*.ts --ignore-path .eslintignore --fix",
     "prepare": "husky install",
-    "dev": "ts-node src/index.ts"
+    "dev": "ts-node src/index.ts",
+    "prepare:db": "npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all"
   },
   "keywords": [],
   "author": "",
